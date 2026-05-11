@@ -19,7 +19,9 @@
 		"i18n:parse": "i18next --config i18next-parser.config.ts && prettier --write \"src/lib/i18n/**/*.{js,json}\"",
 		"cy:open": "cypress open",
 		"test:frontend": "vitest --passWithNoTests",
-		"pyodide:fetch": "node scripts/prepare-pyodide.js"
+		"pyodide:fetch": "node scripts/prepare-pyodide.js",
+		"sync:dev": "git fetch upstream && git checkout dev && git merge upstream/dev",
+		"build:docker": "docker build -t open-webui ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "3.2.2",
